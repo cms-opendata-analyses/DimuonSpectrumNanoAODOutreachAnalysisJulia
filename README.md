@@ -28,15 +28,24 @@ The analysis can be run with the following dataset:
 
 ## How to use it
 
-To run this analysis you need [Jupyter](https://jupyter.org) software (works with both Jupyter notebook and Jypyterlab) with a [Julia kernel](https://julialang.github.io/IJulia.jl/stable/) installed. It requires 2.1 GB free disk space to store input data. The analysis can be run by loading the [DimuonSpectrumNanoAODJulia.ipynb notebook](DimuonSpectrumNanoAODJulia.ipynb) from [Jupyter](https://jupyter.org).
+To run this analysis you need [Julia kernel](https://julialang.github.io/IJulia.jl/stable/) installed. Running the analysis has been validated with the version 1.6.2 and 1.7.0. The analysis required 2.1 GB free disk space to store input data in addition to the space for the software dependencies. The analysis can run either in a [Jupyter](https://jupyter.org) notebook or as a script.
 
-```jupyter-notebook DimuonSpectrumNanoAODJulia.ipynb```
+### Runnning the analysis in a notebook
 
-The analysis can also be run directly from  Julia without the Jupyter software using the code from [src/DimuonSpectrumNanoAODJulia.jl](src/DimuonSpectrumNanoAODJulia.jl).
+To start Jupyter we recommand to run the following command. It will propose to install the Jupyter software if the command is not found from your PATH:
+
+```julia start-notebook.jl```
+
+You should then select the notebook `DimuonSpectrumNanoAODJulia.ipynb` from the file list that should appears in your web browser.
+
+⚠ If you launch Jupyter with the standard `jupyter-notebook` or `jupyterlab` command, please set before the environment variable JULIA_PROJECT to the path of the directory where you have downloaded the files and that contains the `Project.toml` file. This will ensure that the code is run with all the software dependencies at the same version as the we used to validate it.
+
+### Runnning the analysis as a script or from REPL
+
+The analysis can also be run directly from Julia REPL without the Jupyter software using the code from [src/DimuonSpectrumNanoAODJulia.jl](src/DimuonSpectrumNanoAODJulia.jl).
+
+```cd src
+julia -i --project=.. analysis.jl```
 
 
-```
-cd src
-julia -i DimuonSpectrumNanoAODJulia.jl
-```
 

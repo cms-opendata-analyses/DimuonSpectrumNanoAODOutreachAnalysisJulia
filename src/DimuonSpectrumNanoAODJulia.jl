@@ -33,7 +33,7 @@ println("Running the analysis... It will take about 40 seconds to run on the 61.
 t = LazyTree(ROOTFile(fname),"Events")
 @time h = analyze_tree(t);
 
-println("Plotting the result...")
+println("Plotting the result (note the first plot can take long because of Gaffly plotting package initialisation)...")
 import Gadfly as gf
 p = gf.plot(x=xedges(h), y=vcat(h.sumw[2:end-1], [h.sumw[end-1]]), gf.Geom.step, 
         gf.Scale.x_log10(minvalue=0.25, maxvalue=300.), gf.Scale.y_log10,

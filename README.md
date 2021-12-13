@@ -44,8 +44,7 @@ You should then select the notebook `DimuonSpectrumNanoAODJulia.ipynb` from the 
 
 The analysis can also be run directly from Julia REPL without the Jupyter software using the code from [src/DimuonSpectrumNanoAODJulia.jl](src/DimuonSpectrumNanoAODJulia.jl).
 
-```cd src
-julia -i --project=.. analysis.jl```
-
-
-
+```
+cd src
+julia -i --project=.. analysis.jl
+```
